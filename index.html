@@ -287,6 +287,90 @@ details.grown p{margin-top:8px;font-weight:600;font-size:1rem}
   .stage{border-radius:32px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---- Spark Island ---- */
+.sea{position:relative;overflow:hidden;background:var(--cyan);color:#000;border-radius:44px;padding:clamp(22px,4vw,56px);background-image:radial-gradient(circle at 12% 88%,#9ff9fc 0 14%,transparent 15%),radial-gradient(circle at 90% 20%,#9ff9fc 0 10%,transparent 11%)}
+.seain{display:flex;flex-direction:column;gap:20px;align-items:flex-start;max-width:760px}
+.seain h1{font-size:clamp(2.6rem,5.4vw,4.6rem)}
+.hellorow{align-items:flex-end;flex-wrap:nowrap}
+.sparkbig{flex:none;width:clamp(110px,16vw,170px);cursor:pointer}
+.sparkbig svg{width:100%;height:auto;animation:bob 4s ease-in-out infinite}
+.sea .hello{flex:1;min-width:0;font-size:1.3rem}
+.onsea{color:#000;font-size:1.05rem}
+.places{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+@media (min-width:1000px){.places{grid-template-columns:repeat(6,1fr)}.place:nth-child(-n+3){grid-column:span 2}.place:nth-child(n+4){grid-column:span 3}}
+.place{position:relative;display:flex;flex-direction:column;border:0;padding:0;background:var(--field);color:#000;border-radius:36px;overflow:hidden;text-align:left;animation:rise .5s both;animation-delay:calc(var(--i)*70ms);transition:transform .2s}
+.place:hover,.place:focus-visible{transform:translateY(-4px) rotate(-.6deg)}
+.place.pick{outline:5px solid var(--accent);outline-offset:3px}
+.pscene{display:block;height:170px}
+.pscene .scene,.sceneband .scene{display:block;width:100%;height:100%}
+.pscene svg,.sceneband svg{width:100%;height:100%;display:block}
+.pchar{position:absolute;right:14px;top:70px;width:96px;height:96px;filter:drop-shadow(0 4px 0 rgba(0,0,0,.12));animation:bob 3.4s ease-in-out infinite}
+.pfoot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px 18px}
+.pname{font:600 1.5rem/1.1 var(--f-display)}
+.plants{display:flex;gap:6px}
+.lan{display:inline-block;width:30px;height:40px}
+.lan svg{width:100%;height:100%}
+.lan.on{filter:drop-shadow(0 0 8px #ffd25a)}
+.lan.glow{width:90px;height:120px;animation:glowin 1.6s ease-out both}
+@keyframes glowin{0%{transform:scale(.4);opacity:0}50%{transform:scale(1.25);opacity:1}100%{transform:scale(1)}}
+.cld{animation:drift var(--d) linear infinite alternate}
+@keyframes drift{from{transform:translate(var(--x,0),0)}to{transform:translate(40px,0)}}
+.sunb{animation:pulse 5s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+.cog{animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bob{animation:bob 3s ease-in-out infinite}
+.wv{animation:bob 2.4s ease-in-out infinite}
+.flg{animation:bob 1.8s ease-in-out infinite;transform-box:fill-box}
+.sceneband{position:relative;height:clamp(150px,21vw,250px);border-radius:30px;overflow:hidden}
+.sceneband.tall{height:clamp(190px,26vw,320px)}
+.sch{position:absolute;right:18px;bottom:6px;width:96px;height:96px;transform-origin:50% 100%;filter:drop-shadow(0 4px 0 rgba(0,0,0,.12))}
+.sch svg{width:100%;height:100%}
+.sch.big{width:150px;height:150px;animation:bob 3.4s ease-in-out infinite}
+.sch.hop{animation:hopc .6s ease-out}
+@keyframes hopc{30%{transform:translateY(-22px) scale(1.06)}60%{transform:translateY(0) scale(.97,1.04)}}
+.quests{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.quest{display:flex;align-items:center;gap:14px;background:#fff;color:#000;border:0;border-radius:32px;padding:12px 18px 12px 12px;text-align:left;animation:rise .5s both;animation-delay:calc(var(--i)*80ms);transition:transform .2s}
+.quest:hover,.quest:focus-visible{transform:scale(1.03)}
+.qdisc{flex:none;width:84px;height:84px;border-radius:50%;background:var(--field);display:grid;place-items:center}
+.qdisc svg{width:66px;height:66px}
+.qname{flex:1;font:600 1.3rem/1.15 var(--f-display)}
+.biglan{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.sceneband.payoff{height:clamp(220px,28vw,340px)}
+.area.slim{min-height:0;align-items:center;text-align:center}
+.note.big{font-size:1.3rem;color:#000}
+.together{background:#fff8dc;border:3px dashed #000;border-radius:22px;padding:12px 18px;font-size:1.02rem;color:#000;text-align:left;width:100%}
+.pill.on{background:var(--yellow);color:#000}
+.party{position:relative;overflow:hidden;align-items:center;text-align:center}
+.partyspark{width:min(300px,60%);animation:bob 1.2s ease-in-out infinite}
+.partyspark svg{width:100%;height:auto}
+.lanrow{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.lanplace{display:flex;flex-direction:column;align-items:center;gap:4px;background:#fff;border-radius:24px;padding:10px 16px;font:600 1rem var(--f-display)}
+.confetti i{position:absolute;top:-14px;width:12px;height:18px;border-radius:3px;animation:fall var(--d) linear var(--w) infinite}
+@keyframes fall{to{transform:translateY(900px) rotate(540deg)}}
+@media (max-width:760px){
+  .hellorow{flex-wrap:wrap}.pchar{width:80px;height:80px;top:84px}.pscene{height:150px}.sch{width:80px;height:80px}.sch.big{width:110px;height:110px}
+  .sea{border-radius:32px}.seain h1{font-size:2.4rem}
+}
+.twk{animation:twk 2.4s ease-in-out infinite}
+@keyframes twk{50%{opacity:.25}}
+.cutstage{background:#1b2250;color:#fff}
+.cutstage .sceneband{height:clamp(260px,44vh,430px)}
+.cast{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-around;align-items:flex-end;padding:0 4% 4px}
+.cs{display:block;transform-origin:50% 100%;filter:drop-shadow(0 4px 0 rgba(0,0,0,.18))}
+.cs.spk svg{width:130px;height:auto}
+.cs svg.art{width:150px;height:150px}
+.cs.talk{animation:hopc .7s ease-out}
+.cutstage .bubble.big{align-items:center;min-height:110px}
+.by{font:600 1rem var(--f-display);color:var(--accent);margin-bottom:2px}
+.cutstage .bubble-text{font-size:1.5rem;color:#000}
+.cutstage .bubble-text-wrap{flex:1;min-width:0;align-self:center}
+.btn.big{min-height:72px;padding:10px 40px;font-size:1.6rem}
+.cuttray{align-items:center}
+.cutstage .btn.ghost{color:#000}
+.dots{display:flex;gap:8px;margin-left:auto}
+.dots i{width:14px;height:14px;border-radius:50%;background:#ffffff40}
+.dots i.on{background:#fed878}
+.chn{position:absolute;left:14px;top:14px;width:42px;height:42px;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;font:700 1.3rem var(--f-display)}
 </style>
 <div id="app"></div>
 <script>
@@ -433,6 +517,7 @@ function art(name,px,cls){
 const IC=(d,w)=>()=>{const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('fill','none');s.setAttribute('stroke','currentColor');
   s.setAttribute('stroke-width',w||2.6);s.setAttribute('stroke-linecap','round');s.setAttribute('stroke-linejoin','round');s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');s.innerHTML=d;return s;};
 const ICON={
+ together:IC('<circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M3 20c0-4 3-6.5 6-6.5s6 2.5 6 6.5"/><path d="M15.5 14.2c2.8-.5 5.5 1.3 5.5 5.3"/>'),
  speaker:IC('<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/>'),
  mute:IC('<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/>'),
  back:IC('<path d="M15 5l-7 7 7 7"/>',3),
@@ -454,6 +539,139 @@ const ICON={
  gear:IC('<circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>')
 };
 window.LPART={art,ICON,SP,COLORS:C};
+})();
+</script>
+<script>
+/* ---------- story art: scenes, lanterns, SFX ---------- */
+(function(){
+const S=(w,h,inner,vb)=>'<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+(vb||('0 0 '+w+' '+h))+'" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">'+inner+'</svg>';
+const cloud=(x,y,s)=>'<g class="cld" style="--d:'+(18+x%7*3)+'s" transform="translate('+x+' '+y+') scale('+s+')"><ellipse cx="0" cy="0" rx="46" ry="16" fill="#fff"/><ellipse cx="-18" cy="-10" rx="22" ry="14" fill="#fff"/><ellipse cx="14" cy="-14" rx="26" ry="16" fill="#fff"/></g>';
+const sun=(x,y)=>'<g class="sunb"><circle cx="'+x+'" cy="'+y+'" r="34" fill="#fed878"/><circle cx="'+x+'" cy="'+y+'" r="46" fill="#fed878" opacity=".35"/></g>';
+const SCENES={
+zoo:()=>S(800,220,'<rect width="800" height="220" fill="#c9ecff"/>'+sun(690,58)+cloud(140,52,1)+cloud(430,34,.8)+
+ '<ellipse cx="200" cy="250" rx="420" ry="120" fill="#a8e87c"/><ellipse cx="640" cy="260" rx="380" ry="110" fill="#bbf697"/>'+
+ '<g stroke="#6b4a2b" stroke-width="12" stroke-linecap="round" fill="none"><path d="M250 220V110"/><path d="M550 220V110"/><path d="M250 112Q400 20 550 112"/></g>'+
+ '<g stroke="#6b4a2b" stroke-width="7" stroke-linecap="round"><path d="M290 220V100"/><path d="M330 220V70"/><path d="M370 220V54"/><path d="M410 220V54"/><path d="M450 220V70"/><path d="M490 220V100"/><path d="M270 150H530" stroke-width="5"/></g>'+
+ '<rect x="345" y="26" width="110" height="34" rx="12" fill="#fed878" stroke="#6b4a2b" stroke-width="4"/><circle cx="378" cy="43" r="6" fill="#6b4a2b"/><circle cx="400" cy="43" r="6" fill="#6b4a2b"/><circle cx="422" cy="43" r="6" fill="#6b4a2b"/>'),
+market:()=>S(800,220,'<rect width="800" height="220" fill="#ffe3b8"/>'+sun(80,56)+cloud(500,40,.9)+'<rect y="170" width="800" height="50" fill="#f1c27a"/>'+
+ [90,330,570].map((x,i)=>{const c=['#d0106f','#97aaf6','#6cc24a'][i];let st='';for(let k=0;k<6;k++)st+='<rect x="'+(x+k*22)+'" y="86" width="22" height="42" fill="'+(k%2?'#fff':c)+'"/>';
+  return '<g><rect x="'+(x+4)+'" y="124" width="124" height="66" rx="6" fill="#c98a4a"/>'+st+'<path d="M'+x+' 128Q'+(x+66)+' 148 '+(x+132)+' 128" fill="none" stroke="'+c+'" stroke-width="10"/><circle cx="'+(x+34)+'" cy="124" r="14" fill="#fed878"/><circle cx="'+(x+66)+'" cy="124" r="14" fill="#ff9d5c"/><circle cx="'+(x+98)+'" cy="124" r="14" fill="#bbf697"/></g>';}).join('')),
+shop:()=>S(800,220,'<rect width="800" height="220" fill="#d9e3ff"/>'+cloud(150,48,1)+cloud(560,64,.8)+'<rect y="160" width="800" height="60" fill="#6ea8ff"/>'+
+ '<path d="M0 176q50-14 100 0t100 0t100 0t100 0t100 0t100 0t100 0t100 0" fill="none" stroke="#fff" stroke-width="5" opacity=".7"/>'+
+ '<path d="M110 160Q400 20 690 160" fill="none" stroke="#8b5a2b" stroke-width="20"/><g stroke="#8b5a2b" stroke-width="8"><path d="M200 160V100"/><path d="M300 160V66"/><path d="M400 160V54"/><path d="M500 160V66"/><path d="M600 160V100"/></g>'+
+ '<g class="cog" style="transform-origin:700px 70px"><circle cx="700" cy="70" r="30" fill="#fed878" stroke="#b9892a" stroke-width="4"/><circle cx="700" cy="70" r="11" fill="#d9e3ff"/>'+[0,45,90,135,180,225,270,315].map(a=>'<rect x="694" y="26" width="12" height="14" fill="#fed878" stroke="#b9892a" stroke-width="3" transform="rotate('+a+' 700 70)"/>').join('')+'</g>'),
+shore:()=>S(800,220,'<rect width="800" height="220" fill="#c9f4ff"/>'+sun(700,56)+cloud(180,50,1)+'<rect y="96" width="800" height="70" fill="#6ef8fb"/>'+
+ '<path d="M0 110q40-12 80 0t80 0t80 0t80 0t80 0t80 0t80 0t80 0t80 0t80 0" fill="none" stroke="#fff" stroke-width="5" opacity=".8" class="wv"/>'+
+ '<path d="M0 150q50-16 100 0t100 0t100 0t100 0t100 0t100 0t100 0t100 0" fill="#fbe3a8" opacity="0"/><path d="M0 160Q200 130 400 160T800 150V220H0Z" fill="#fbe3a8"/>'+
+ '<g class="bob"><path d="M300 104h90l-14 22h-62Z" fill="#d0106f"/><path d="M345 100V50l40 46Z" fill="#fff"/></g>'+
+ '<path d="M110 190l14-26 14 26Z" fill="#ff9d5c"/><circle cx="560" cy="188" r="14" fill="#f4a6c0"/><path d="M546 188q14-26 28 0" fill="#fff" opacity=".5"/>'),
+hill:()=>S(800,220,'<rect width="800" height="220" fill="#e4ffd0"/>'+sun(90,60)+cloud(450,44,1)+'<ellipse cx="400" cy="280" rx="520" ry="190" fill="#8fdc6a"/><ellipse cx="120" cy="260" rx="260" ry="90" fill="#bbf697"/>'+
+ '<path d="M400 92V36" stroke="#6b4a2b" stroke-width="7"/><path d="M402 38l54 16-54 16Z" fill="#d0106f" class="flg"/>'+
+ '<g fill="#b8b8b2" stroke="#8a8a84" stroke-width="3"><ellipse cx="570" cy="190" rx="26" ry="18"/><ellipse cx="610" cy="196" rx="20" ry="14"/><ellipse cx="590" cy="170" rx="18" ry="13"/><ellipse cx="190" cy="196" rx="22" ry="15"/></g>')
+};
+
+const stars=()=>[[60,30],[150,70],[240,28],[330,60],[470,24],[560,64],[650,34],[740,70],[110,120],[700,130],[420,110]].map((q,i)=>'<circle class="twk" style="animation-delay:'+(i*.37)+'s" cx="'+q[0]+'" cy="'+q[1]+'" r="'+(2+i%3)+'" fill="#fff6c8"/>').join('');
+const bigLantern=(on)=>'<g transform="translate(400 112)"><path d="M0-98v26" stroke="'+(on?'#fed878':'#8d93c9')+'" stroke-width="6" stroke-linecap="round"/><rect x="-34" y="-74" width="68" height="16" rx="7" fill="'+(on?'#fed878':'#6e75b0')+'"/><rect x="-52" y="-58" width="104" height="104" rx="38" fill="'+(on?'#ffe9a0':'#4a5190')+'" stroke="'+(on?'#fff6c8':'#8d93c9')+'" stroke-width="5"/>'+(on?'<circle r="26" cy="-6" fill="#fff"/><g class="twk" stroke="#fed878" stroke-width="6" stroke-linecap="round"><path d="M-84-30l-18-8"/><path d="M84-30l18-8"/><path d="M-90 6h-22"/><path d="M90 6h22"/></g>':'<path d="M-6-58l14 24-16 18 14 24" fill="none" stroke="#1b2250" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>')+'<rect x="-36" y="46" width="72" height="14" rx="7" fill="'+(on?'#fed878':'#6e75b0')+'"/></g>';
+SCENES.night=()=>S(800,220,'<rect width="800" height="220" fill="#1b2250"/>'+stars()+'<ellipse cx="400" cy="270" rx="560" ry="100" fill="#2a3470"/>'+bigLantern(false));
+SCENES.dawn=()=>S(800,220,'<rect width="800" height="220" fill="#3b2f78"/><rect y="120" width="800" height="100" fill="#f4a6c0" opacity=".35"/>'+stars()+'<ellipse cx="400" cy="270" rx="560" ry="100" fill="#3d4a96"/><circle cx="400" cy="100" r="110" fill="#fed878" opacity=".25"/>'+bigLantern(true));
+const CHAR={zoo:'lion',market:'chef',shop:'robot',shore:'owl',hill:'fox'};
+const NAME={zoo:'King Leo',market:'Chef Pip',shop:'Bolt',shore:'Professor Hoot',hill:'Foxy'};
+const PLACES=[
+ {id:'zoo',name:'Zoo Gate',hat:'det',games:['rule','animal','odd'],intro:'Oh no! The zoo gate is stuck. King Leo is waiting for you.'},
+ {id:'market',name:'Market Square',hat:'det',games:['pattern','mango','number'],intro:"Chef Pip's market is in a muddle. Can you help?"},
+ {id:'shop',name:'Workshop Bridge',hat:'eng',games:['hanoi','river','robot','paths'],intro:'Bolt the robot needs to cross. Time to build and fix!'},
+ {id:'shore',name:'Science Shore',hat:'sci',games:['check','float','whoknows'],intro:'Professor Hoot is testing things on the shore. Let us help him find out.'},
+ {id:'hill',name:'Play Hill',hat:'big',games:['stones','ttt'],intro:'Foxy has a big game for you. Think before you move!'}];
+const QUEST={
+ rule:{t:'The Gate Rule',goal:"King Leo's gate only opens for a secret rule.",win:'Click! The gate swings open and King Leo does a happy roar.'},
+ animal:{t:'Hide and Seek',goal:'A zoo animal is playing hide and seek.',win:'Found you! The animal pops out and tickles King Leo.'},
+ odd:{t:'The Zoo Parade',goal:'The zoo parade is lining up, but someone is in the wrong line.',win:'The parade marches on, with everyone in the right line.'},
+ pattern:{t:'The Bead Sign',goal:'Chef Pip is threading beads for the market sign.',win:'The sign is finished, and it sparkles!'},
+ mango:{t:'The Mango Mystery',goal:"Someone ate Chef Pip's mango, and there are crumbs everywhere.",win:'Case closed! Chef Pip bakes you a pretend pie.'},
+ number:{t:'Guess My Number',goal:'Chef Pip is thinking of a number for the market game.',win:'You found it! Chef Pip does a big spin.'},
+ hanoi:{t:'The Tall Tower',goal:'Bolt is stacking discs to build a tower.',win:'The tower stands tall. Bolt beeps happily.'},
+ river:{t:'The Little Boat',goal:'Bolt must row friends across the river in a small boat.',win:'Everyone is across, and nobody got eaten!'},
+ robot:{t:'The Treasure Robot',goal:"Bolt's treasure robot needs a program.",win:'Beep boop! The robot found the treasure.'},
+ paths:{t:'Every Path',goal:'Bolt wants to find every path to the flag.',win:'So many paths! Bolt is dizzy with joy.'},
+ check:{t:'Beach Facts',goal:'Professor Hoot is collecting facts on the beach.',win:'Hoot writes it all down in his notebook.'},
+ float:{t:'Sink or Float',goal:'Professor Hoot wants to know what floats.',win:'Splash! Now Hoot knows what floats and what sinks.'},
+ whoknows:{t:'The Puppet Test',goal:'Two puppets disagree, and only a test can settle it.',win:'A good test settles it. Hoot claps his wings.'},
+ stones:{t:'The Stone Game',goal:'Foxy challenges you to the stones game.',win:'What a game! Foxy shakes your paw.'},
+ ttt:{t:'Crosses and Noughts',goal:'Foxy wants to play noughts and crosses.',win:'Good game! Foxy wants a rematch.'}};
+
+const SPK='spark';
+const f=(scene,by,who,t,mood)=>({scene,by,who,t,mood});
+const STORY={
+ prologue:[
+  f('night','Spark',[SPK],'Hello! I am Spark. I live on Spark Island, and I love it when it glows.','smile'),
+  f('night','Spark',[SPK],'Every night, the Great Lantern lights up the whole island. But last night, it fell down. Crash!','wow'),
+  f('night','Spark',[SPK],'It broke into fifteen glowing sparks, and they rolled away all over the island.','hmm'),
+  f('night','Spark',[SPK],'A clever thinker can find them. Will you help me?','think')],
+ ch:{
+  zoo:{intro:[
+    f('zoo','Spark',[SPK],'Our first stop is the zoo. Listen. Something is snoring!','smile'),
+    f('zoo','King Leo',[SPK,'lion'],'Grr, I mean hello! I am King Leo. My gate is stuck, and my friends are hiding.','smile'),
+    f('zoo','King Leo',[SPK,'lion'],'A spark rolled in here. Can you work out how to find it?','think')],
+   outro:[
+    f('zoo','King Leo',[SPK,'lion'],'You did it! The gate is open, and here is a glowing spark!','wow'),
+    f('zoo','King Leo',[SPK,'lion'],'I saw someone run past with a bushy tail and very quick feet.','think')]},
+  market:{intro:[
+    f('market','Spark',[SPK],'Mmm, what is that smell? This is Chef Pip\'s market.','smile'),
+    f('market','Chef Pip',[SPK,'chef'],'Welcome, welcome! My stall is in a muddle, and my signs are missing.','smile'),
+    f('market','Chef Pip',[SPK,'chef'],'A spark fell into my pie. Help me sort the muddle, and we will find it.','think')],
+   outro:[
+    f('market','Chef Pip',[SPK,'chef'],'Marvellous! Out pops the spark, a little hot and a little bit pie.','wow'),
+    f('market','Chef Pip',[SPK,'chef'],'Someone quick took a bite of my pie. He left orange fur on my stall.','think')]},
+  shop:{intro:[
+    f('shop','Spark',[SPK],'Beep beep! This is Workshop Bridge. Bolt the robot lives here.','smile'),
+    f('shop','Bolt',[SPK,'robot'],'Beep! The bridge is broken, and I cannot reach my toolbox.','hmm'),
+    f('shop','Bolt',[SPK,'robot'],'A spark is stuck in my gears. Let us fix it one step at a time.','think')],
+   outro:[
+    f('shop','Bolt',[SPK,'robot'],'Boing! The spark pops out, and the bridge is fixed!','wow'),
+    f('shop','Bolt',[SPK,'robot'],'Someone orange borrowed my rope and ran up the hill. He was giggling.','think')]},
+  shore:{intro:[
+    f('shore','Spark',[SPK],'Splash! This is the shore, and here is Professor Hoot.','smile'),
+    f('shore','Professor Hoot',[SPK,'owl'],'Hoo hoo! I have a hundred questions and no answers. Will you test things with me?','think'),
+    f('shore','Professor Hoot',[SPK,'owl'],'A spark washed up on the sand. A good test will tell us where.','think')],
+   outro:[
+    f('shore','Professor Hoot',[SPK,'owl'],'Hoo! The test worked, and here is your spark!','wow'),
+    f('shore','Professor Hoot',[SPK,'owl'],'I found orange paw prints in the sand. They go up to Play Hill.','think')]},
+  hill:{intro:[
+    f('hill','Spark',[SPK],'Those paw prints lead to Play Hill. Someone is up there.','hmm'),
+    f('hill','Foxy',[SPK,'fox'],'Oh! You found me. I am Foxy, and I have the last spark.','hmm'),
+    f('hill','Foxy',[SPK,'fox'],'I took it because nobody plays with me. Play with me, and I will give it back.','smile')],
+   outro:[
+    f('hill','Foxy',[SPK,'fox'],'That was the best game ever! Here is the last spark. I am sorry I took it.','smile'),
+    f('hill','Spark',[SPK,'fox'],'That is okay, Foxy. Next time, just ask. You can play with us.','smile')]}},
+ finale:[
+  f('night','Spark',[SPK],'Fifteen sparks! Let us put them all back together.','wow'),
+  f('dawn','Spark',[SPK],'Whoosh! The Great Lantern is whole, and the island is glowing again.','wow'),
+  f('dawn','Everyone',[SPK,'lion','chef','robot','owl','fox'],'Thank you, friend! You thought so hard to help us all.','smile'),
+  f('dawn','Spark',[SPK],'Spark Island is having a party. You are the guest of honour!','wow')]};
+const LINES={welcome:'Welcome to Spark Island! The lanterns have gone out. Let us light them again.',
+ pick:'Pick a quest.',where:'Where shall we go?',lit:'You lit a lantern!',tell:'Tell me one thing you tried.',
+ place:'All three lanterns are lit here. This place is glowing!',party:'Every lantern is lit! Spark Island is having a party!',
+ next:'Shall we do another quest?'};
+const lantern=(on)=>'<svg viewBox="0 0 48 64" aria-hidden="true" focusable="false"><path d="M24 2v8" stroke="#000" stroke-width="3" stroke-linecap="round"/><rect x="13" y="8" width="22" height="7" rx="3" fill="#000"/><rect x="10" y="15" width="28" height="36" rx="13" fill="'+(on?'#fed878':'#cfcfca')+'" stroke="#000" stroke-width="3"/>'+(on?'<circle cx="24" cy="33" r="8" fill="#fff6c8"/><g stroke="#fed878" stroke-width="3" stroke-linecap="round"><path d="M3 20l5 3"/><path d="M45 20l-5 3"/><path d="M2 36h6"/><path d="M46 36h-6"/></g>':'')+'<rect x="14" y="51" width="20" height="7" rx="3" fill="#000"/></svg>';
+function el(html,cls){const d=document.createElement('span');d.className=cls||'';d.innerHTML=html;return d;}
+/* ---- little synth sounds, no files ---- */
+let AC=null;
+function ac(){if(AC)return AC;try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){AC=false;}return AC;}
+function tone(f,t0,d,type,g,slide){const a=ac();if(!a)return;const o=a.createOscillator(),v=a.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,a.currentTime+t0);
+  if(slide)o.frequency.exponentialRampToValueAtTime(slide,a.currentTime+t0+d);
+  v.gain.setValueAtTime(0.0001,a.currentTime+t0);v.gain.exponentialRampToValueAtTime(g||0.12,a.currentTime+t0+0.015);v.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+t0+d);
+  o.connect(v);v.connect(a.destination);o.start(a.currentTime+t0);o.stop(a.currentTime+t0+d+0.05);}
+const SFXS={tap:()=>tone(660,0,.07,'sine',.06),pop:()=>{tone(520,0,.09,'triangle',.12,900);},
+ boing:()=>{tone(300,0,.22,'sine',.12,150);tone(450,.04,.2,'sine',.05,220);},
+ win:()=>{[523,659,784,1047].forEach((f,i)=>tone(f,i*.11,.28,'triangle',.12));},
+ lantern:()=>{[392,523,659,784,1047,1319].forEach((f,i)=>tone(f,i*.13,.45,'sine',.1));tone(130,0,.9,'sine',.08);},
+ whoosh:()=>tone(900,0,.25,'sawtooth',.04,200),
+ party:()=>{for(let k=0;k<3;k++)[523,659,784,1047,784,659].forEach((f,i)=>tone(f,k*.8+i*.12,.2,'square',.05));}};
+let ON=()=>true;
+window.LPSTORY={STORY,SCENES,CHAR,NAME,PLACES,QUEST,LINES,lantern,el,
+ scene:p=>el(SCENES[p](),'scene'),
+ sfx:n=>{if(!ON())return;const a=ac();if(a&&a.state==='suspended')a.resume();try{SFXS[n]&&SFXS[n]();}catch(e){}},
+ gate:f=>{ON=f;}};
 })();
 </script>
 <script>
@@ -618,50 +836,108 @@ const HATS={det:{name:'Detective',sub:'Ask, look and work it out',pic:'hats_det'
  big:{name:'Big games',sub:'For a longer play',pic:'hats_big',ids:['stones','ttt']}};
 const ALL=()=>['det','eng','sci','big'].flatMap(k=>HATS[k].ids);
 
-/* ---------- home: Spark picks, she can switch ---------- */
-function pickToday(not){const recent=store.get('recent',[]);const r=Array.isArray(recent)?recent:[];
-  const ids=ALL().filter(i=>GAMES[i]&&i!==not);
-  const fresh=ids.filter(i=>!r.slice(0,6).includes(i));return pick(fresh.length?fresh:ids);}
-function greetLine(g){return 'Hello! I am Spark. Today I picked '+g.title+'. Tap the big button to play.';}
+/* ---------- the island: map, places, party ---------- */
+const ST=window.LPSTORY;ST.gate(()=>App.voice);
+const litAll=()=>{const o=store.get('lit',{});return(o&&typeof o==='object'&&!Array.isArray(o))?o:{};};
+const placeOf=id=>ST.PLACES.find(p=>p.games.includes(id));
+const litN=p=>p.games.filter(g=>litAll()[g]).length;
+const lanterns=(p)=>h('span',{class:'plants'},p.games.map(g=>ST.el(ST.lantern(!!litAll()[g]),'lan'+(litAll()[g]?' on':''))));
+function sparkPick(){const open=ST.PLACES.find(p=>litN(p)<p.games.length);return open||pick(ST.PLACES);}
+function playFinale(){cutscene(ST.STORY.finale,()=>{store.set('finale',1);openParty();},'To the party');}
+function playOutro(pid){cutscene(ST.STORY.ch[pid].outro,()=>{store.set('out_'+pid,1);
+  const all=ALL().filter(i=>GAMES[i]).every(i=>litAll()[i]);if(all&&!store.get('finale',false))playFinale();else home();},'Back to the map');}
+function playPrologue(){cutscene(ST.STORY.prologue,()=>{store.set('prologue',1);home();},"Let's go");}
 function home(){
   App.sess=null;loadPack();
-  const recent=store.get('recent',[]);
-  if(!App.today||!GAMES[App.today]||(Array.isArray(recent)&&recent[0]===App.today))App.today=pickToday(Array.isArray(recent)?recent[0]:null);
-  const sp=giantSVG();const stopLook=[];
-  const todayBtn=h('button',{class:'today',type:'button','aria-label':'Today Spark picked '+GAMES[App.today].title+'. Tap to hear it.'});
-  const bt=h('span',{class:'hello-text'});
-  function paintToday(){const g=GAMES[App.today];todayBtn.replaceChildren(h('span',{class:'today-pic'},art(g.tile,64)),h('span',{class:'today-name'},g.title));
-    todayBtn.setAttribute('aria-label','Today Spark picked '+g.title+'. Tap to hear it.');
-    bt.textContent='Hello! Today I picked this one.';}
-  todayBtn.addEventListener('click',()=>{speak(greetLine(GAMES[App.today]));});
-  paintToday();
-  const play=h('button',{class:'bigplay',type:'button','aria-label':'Play '+GAMES[App.today].title,onclick:()=>openGame(App.today)},ICON.play(),h('span',null,'Play'));
-  const another=h('button',{class:'btn ghost round',type:'button',onclick:()=>{App.today=pickToday(App.today);paintToday();play.setAttribute('aria-label','Play '+GAMES[App.today].title);setMood(sp,'wow');speak('How about '+GAMES[App.today].title+'?');}},ICON.swap(),h('span',null,'Another game'));
-  const more=h('button',{class:'btn ghost round',type:'button',onclick:()=>{const s=$('#shelf');if(s){s.scrollIntoView({behavior:reduced()?'auto':'smooth',block:'start'});s.focus({preventScroll:true});}speak('Here are all the games.');}},ICON.grid(),h('span',null,'All games'));
-  const shelf=h('section',{id:'shelf',class:'groups',tabindex:'-1','aria-label':'All the games'},['det','eng','sci','big'].map(k=>{const H=HATS[k];
-    return h('div',{class:'group','data-hat':k,style:'--n:'+H.ids.length},
-      h('div',{class:'ghead'},h('span',{class:'gpic'},art(H.pic,44)),h('h2',null,H.name)),
-      h('div',{class:'tiles'},H.ids.map((id,i)=>{const g=GAMES[id];
-        return h('button',{class:'tile',type:'button',style:'--i:'+i,onclick:()=>openGame(id)},
-          h('span',{class:'tdisc'},art(g.tile,84)),h('span',{class:'tname'},g.title));})));}));
+  const L=litAll();const all=ALL().filter(i=>GAMES[i]);const n=all.filter(i=>L[i]).length;
+  const sp=sparkSVG();const stopLook=[];
+  const pk=sparkPick();
+  const line=ST.LINES.where;
+  const places=ST.PLACES.map((p,i)=>h('button',{class:'place'+(p.id===pk.id&&n<all.length?' pick':''),type:'button',style:'--i:'+i,'data-hat':p.hat,
+      'aria-label':'Chapter '+(i+1)+', '+p.name+', '+litN(p)+' of '+p.games.length+' lanterns lit',onclick:()=>{ST.sfx('whoosh');openPlace(p.id);}},
+    h('span',{class:'pscene'},ST.scene(p.id)),h('span',{class:'pchar'},art(ST.CHAR[p.id],96)),
+    h('span',{class:'chn','aria-hidden':'true'},String(i+1)),h('span',{class:'pfoot'},h('span',{class:'pname'},p.name),lanterns(p))));
+  const go=h('button',{class:'bigplay',type:'button','aria-label':'Go to '+pk.name,onclick:()=>{ST.sfx('whoosh');openPlace(pk.id);}},ICON.play(),h('span',null,"Let's go"));
+  const party=n>=all.length?h('button',{class:'btn ask round',type:'button',onclick:()=>store.get('finale',false)?openParty():playFinale()},ICON.play(),h('span',null,'The island party')):h('button',{class:'btn ghost round',type:'button',onclick:()=>playPrologue()},ICON.play(),h('span',null,'The story'));
+  const bt=h('span',{class:'hello-text'},line);
   const node=h('div',{class:'wrap home'},
-    h('header',{class:'bar'},h('span',{class:'mark'},"Let's Play!"),h('div',{class:'barr'},voiceBtn(),holdBtn(()=>grownups()))),
-    h('section',{class:'hero'},
-      h('div',{class:'giantclip'},h('div',{class:'giant',role:'button',tabindex:'0','aria-label':'Spark. Tap to hear hello.',onclick:()=>{setMood(sp,'wow');speak(greetLine(GAMES[App.today]));},onkeydown:e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setMood(sp,'wow');speak(greetLine(GAMES[App.today]));}}},sp)),
-      h('div',{class:'heroin'},
-        h('h1',null,'Thinking games with Spark'),
-        h('div',{class:'hello'},bt,h('button',{class:'say',type:'button','aria-label':'Hear Spark say hello',onclick:()=>speak(greetLine(GAMES[App.today]))},ICON.speaker())),
-        todayBtn,play,
-        h('div',{class:'row'},another,more))),
-    shelf);
+    h('header',{class:'bar'},h('span',{class:'mark'},"Let's Play!"),h('div',{class:'barr'},voiceBtn(),togetherBtn(),holdBtn(()=>grownups()))),
+    h('section',{class:'sea'},
+      h('div',{class:'seain'},h('h1',null,'Spark Island'),
+        h('div',{class:'row hellorow'},h('div',{class:'sparkbig',role:'button',tabindex:'0','aria-label':'Spark. Tap to hear hello.',onclick:()=>{setMood(sp,'wow');speak(line);},onkeydown:e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setMood(sp,'wow');speak(line);}}},sp),
+          h('div',{class:'hello'},bt,h('button',{class:'say',type:'button','aria-label':'Hear Spark say it again',onclick:()=>speak(line)},ICON.speaker()))),
+        h('div',{class:'row'},go,party),
+        h('p',{class:'note onsea'},n+' of '+all.length+' lanterns lit'))),
+    h('section',{class:'places','aria-label':'The places on the island'},places));
   view(node);
   const sb=blinkLoop(sp);const sl=lookAround(sp,document.body);
-  const first=e=>{if(!$('.hero')){document.removeEventListener('pointerdown',first,true);return;}
-    document.removeEventListener('pointerdown',first,true);
-    if(e.target.closest&&e.target.closest('.bigplay,.tile,.gatewrap,.pill'))return;
-    setMood(sp,'wow');speak(greetLine(GAMES[App.today]));};
-  document.addEventListener('pointerdown',first,true);
-  App.cleanup=()=>{sb&&sb();sl&&sl();document.removeEventListener('pointerdown',first,true);};
+  const hello=()=>{store.set('seen',true);setMood(sp,'wow');speak(line);};
+  const firstTap=e=>{document.removeEventListener('pointerdown',firstTap,true);if(e.target.closest&&e.target.closest('.bigplay,.place,.gatewrap,.pill'))return;hello();};
+  document.addEventListener('pointerdown',firstTap,true);
+  App.cleanup=()=>{sb&&sb();sl&&sl();document.removeEventListener('pointerdown',firstTap,true);};
+}
+function togetherBtn(){const on=!!store.get('together',false);
+  const b=h('button',{class:'pill',type:'button','aria-pressed':String(on),'aria-label':on?'Playing together. Tap to play alone.':'Playing alone. Tap to play together with a grown-up.',onclick:()=>{const v=!store.get('together',false);store.set('together',v);b.setAttribute('aria-pressed',String(v));
+      b.setAttribute('aria-label',v?'Playing together. Tap to play alone.':'Playing alone. Tap to play together with a grown-up.');b.classList.toggle('on',v);ST.sfx('pop');}},ICON.together());
+  if(on)b.classList.add('on');return b;}
+/* ---------- story scenes: tap Next, Spark and the characters talk ---------- */
+function cutscene(frames,done,endLabel){
+  let i=0;const sparks=[];
+  const sceneHost=h('div',{class:'sceneband tall cut'});
+  const cast=h('div',{class:'cast'});
+  const by=h('div',{class:'by'});const txt=h('div',{class:'bubble-text'});
+  const nextBtn=h('button',{class:'btn go big',type:'button'});
+  const skip=h('button',{class:'btn ghost',type:'button',onclick:()=>fin()},h('span',null,'Skip'));
+  let stopB=null;
+  function fin(){stopB&&stopB();done();}
+  function show(){
+    const f=frames[i];const last=i===frames.length-1;
+    cast.replaceChildren(...f.who.map(w=>{
+      if(w==='spark'){const sp=sparkSVG();setMood(sp,f.mood||'smile');return h('span',{class:'cs spk'+(f.by==='Spark'?' talk':'')},sp);}
+      return h('span',{class:'cs'+(f.by!=='Spark'?' talk':'')},art(w,f.who.length>3?96:150));}));
+    sceneHost.replaceChildren(ST.scene(f.scene),cast);
+    by.textContent=f.by;txt.textContent=f.t;
+    nextBtn.replaceChildren(ICON.play(),h('span',null,last?(endLabel||"Let's go"):'Next'));
+    nextBtn.setAttribute('aria-label',last?(endLabel||"Let's go"):'Next');
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k<=i));
+    ST.sfx(i?'tap':'whoosh');speak(f.t);
+  }
+  nextBtn.onclick=()=>{if(i<frames.length-1){i++;show();}else fin();};
+  const dots=h('div',{class:'dots','aria-hidden':'true'},frames.map(()=>h('i')));
+  const node=h('div',{class:'wrap cutscreen','data-hat':'det'},
+    h('div',{class:'stage cutstage'},sceneHost,
+      h('div',{class:'bubble big'},h('div',{class:'bubble-text-wrap'},by,txt),h('button',{class:'say',type:'button','aria-label':'Hear it again',onclick:()=>speak(frames[i].t)},ICON.speaker())),
+      h('div',{class:'tray cuttray'},nextBtn,skip,dots)));
+  view(node);show();nextBtn.focus({preventScroll:true});
+}
+function openPlace(pid){
+  const p=ST.PLACES.find(x=>x.id===pid);App.sess=null;
+  if(!store.get('ch_'+pid,false)){cutscene(ST.STORY.ch[pid].intro,()=>{store.set('ch_'+pid,1);openPlace(pid);},'Start the quests');return;}
+  const says=p.intro+' '+ST.LINES.pick;
+  const cards=p.games.map((id,i)=>{const g=GAMES[id];if(!g)return null;const q=ST.QUEST[id];const on=!!litAll()[id];
+    return h('button',{class:'quest'+(on?' done':''),type:'button',style:'--i:'+i,'aria-label':q.t+(on?', lantern lit':''),onclick:()=>{ST.sfx('pop');openGame(id);}},
+      h('span',{class:'qdisc'},art(g.tile,84)),h('span',{class:'qname'},q.t),ST.el(ST.lantern(on),'lan'+(on?' on':'')));});
+  const sp=sparkSVG();
+  const node=h('div',{class:'wrap place-screen','data-hat':p.hat},
+    h('div',{class:'gbar'},h('button',{class:'pill',type:'button','aria-label':'Back to the island map',onclick:home},ICON.back()),h('h2',null,p.name),h('button',{class:'say light',type:'button','aria-label':'Hear it again',onclick:()=>speak(says)},ICON.speaker()),voiceBtn()),
+    h('div',{class:'stage'},
+      h('div',{class:'sceneband tall'},ST.scene(p.id),h('span',{class:'sch big'},art(ST.CHAR[p.id],150))),
+      h('div',{class:'spark'},sp,h('div',{class:'bubble'},h('div',{class:'bubble-text'},p.intro+' '+ST.LINES.pick),h('button',{class:'say',type:'button','aria-label':'Hear it again',onclick:()=>speak(says)},ICON.speaker()))),
+      h('div',{class:'quests'},cards)));
+  view(node);speak(says);const sb=blinkLoop(sp);App.cleanup=()=>{sb&&sb();};
+}
+function openParty(){
+  const all=ALL().filter(i=>GAMES[i]);
+  const sp=giantSVG();const say='Every lantern is lit! Spark Island is having a party!';
+  const dots=Array.from({length:26},(_,i)=>h('i',{style:'left:'+((i*37)%100)+'%;--d:'+(3+(i%5))+'s;--w:'+(i%7*.4)+'s;background:'+['#d0106f','#fed878','#97aaf6','#bbf697','#6ef8fb'][i%5]}));
+  const node=h('div',{class:'wrap'},
+    h('div',{class:'gbar'},h('button',{class:'pill',type:'button','aria-label':'Back to the island map',onclick:home},ICON.home()),h('h2',null,'The island party'),h('button',{class:'say light',type:'button','aria-label':'Hear it again',onclick:()=>speak(say)},ICON.speaker()),voiceBtn()),
+    h('div',{class:'stage party','data-hat':'big'},h('div',{class:'confetti','aria-hidden':'true'},dots),
+      h('div',{class:'partyspark'},sp),
+      h('div',{class:'lanrow'},ST.PLACES.map(p=>h('div',{class:'lanplace'},lanterns(p),h('span',null,p.name)))),
+      h('p',{class:'ask'},'Every lantern is lit! Spark Island is having a party!'),
+      h('div',{class:'tray'},btn('Back to the map','go',()=>home(),'home'))));
+  view(node);ST.sfx('party');setMood(sp,'wow');speak(say);
 }
 
 /* ---------- game shell ---------- */
@@ -670,6 +946,8 @@ function openGame(id,level){
   const sess={id,level,tries:0,retries:0,questions:0,changes:0,predictions:0,explains:0,creates:0,started:false};
   App.sess=sess;let n=0;const cleanups=[];let askFn=null,timers=[];const reasons=new Set();let sheetEl=null;
   const sp=sparkSVG();const stopBlink=blinkLoop(sp);
+  const place=placeOf(id),Q=ST.QUEST[id],charName=ST.CHAR[place.id];
+  const chEl=h('span',{class:'sch'},art(charName,96));
   const bt=h('div',{class:'bubble-text'});
   const bubble=h('div',{class:'bubble','aria-live':'polite'},bt,
     h('button',{class:'say',type:'button','aria-label':'Hear Spark again',onclick:()=>speak(bt.dataset.say||bt.textContent)},ICON.speaker()));
@@ -687,19 +965,19 @@ function openGame(id,level){
       if(key){const els=[...area.querySelectorAll(sel)].filter(e=>!e.disabled);const t=els.find(e=>label(e)===key.l)||els[Math.min(key.i,els.length-1)];if(t)try{t.focus({preventScroll:true});}catch(e){}}};}
   const tray=h('div',{class:'tray'});
   const askBtn=btn('Ask Spark','ask',()=>openAsk(),'ask');askBtn.hidden=true;
-  const doneBtn=btn('All done','ghost',()=>finish(),'tick');
+  const doneBtn=btn('I am finished','ghost',()=>finish(),'tick');
   tray.append(askBtn,doneBtn);
-  const homeBtn=h('button',{class:'pill',type:'button','aria-label':'Home',onclick:leave},ICON.home());
+  const homeBtn=h('button',{class:'pill',type:'button','aria-label':'Back to '+place.name,onclick:leave},ICON.back());
   const screen=h('div',{class:'wrap game','data-hat':g.hat},
-    h('div',{class:'gbar'},homeBtn,h('h2',null,g.title),h('button',{class:'say light',type:'button','aria-label':'Hear the game name',onclick:()=>speak(g.title)},ICON.speaker()),voiceBtn()),
-    h('div',{class:'stage'},h('div',{class:'spark'},sp,bubble),area,tray));
+    h('div',{class:'gbar'},homeBtn,h('h2',null,Q.t),h('button',{class:'say light',type:'button','aria-label':'Hear the quest name',onclick:()=>speak(Q.t)},ICON.speaker()),voiceBtn()),
+    h('div',{class:'stage'},h('div',{class:'sceneband'},ST.scene(place.id),chEl),h('div',{class:'spark'},sp,bubble),area,tray,store.get('together',false)?h('p',{class:'together'},h('b',null,'Together: '),g.grown.ask):null));
   const ctx={area,level,sess,
     say(t,mood,extra){bt.replaceChildren(t);bt.dataset.say=t+(extra?' '+extra:'');if(extra)bt.append(h('span',{class:'extra'},extra));
       setMood(sp,mood||'smile');speak(t+(extra?' '+extra:''));},
-    intro(t,mood,extra){const T=/[.!?]$/.test(g.title)?g.title:g.title+'.';bt.replaceChildren(t);bt.dataset.say=T+' '+t+(extra?' '+extra:'');if(extra)bt.append(h('span',{class:'extra'},extra));setMood(sp,mood||'smile');speak(T+' '+t+(extra?' '+extra:''));},
+    intro(t,mood,extra){const T=Q.goal;bt.replaceChildren(t);bt.dataset.say=T+' '+t+(extra?' '+extra:'');if(extra)bt.append(h('span',{class:'extra'},extra));setMood(sp,mood||'smile');speak(T+' '+t+(extra?' '+extra:''));},
     mood(m){setMood(sp,m);},
     count(kind){const k=COUNT[kind];if(k){sess[k]++;sess.started=true;}if(kind==='retry')sess.tries++;},
-    fx(kind,extra){this.count(kind);
+    fx(kind,extra){this.count(kind);ST.sfx(kind==='solved'?'win':kind==='retry'?'boing':kind==='try'?'pop':'tap');chEl.classList.remove('hop');void chEl.getBoundingClientRect();chEl.classList.add('hop');
       let t;
       if(kind==='try'){n++;t=(n%2===1)?PRAISE.try[rnd(3)]:'';sp.classList.remove('bounce');void sp.getBoundingClientRect();sp.classList.add('bounce');setMood(sp,'wow');}
       else if(kind==='retry'&&extra&&sess.retries%3!==1)t='';
@@ -730,9 +1008,9 @@ function openGame(id,level){
       ...items.map(it=>chip(it.q,()=>{close();ctx.fx('question');ctx.say(it.a,'think');if(it.run)it.run();})),
       btn('Close','ghost',()=>close(),'cross')]);}
   function leave(){
-    if(!sess.started){home();return;}
+    if(!sess.started){openPlace(place.id);return;}
     const close=sheet('Leave this game?',[
-      h('div',{class:'row two'},btn('Keep playing','go',()=>close(),'play'),btn('Go home','ghost',()=>home(),'home'))]);}
+      h('div',{class:'row two'},btn('Keep playing','go',()=>close(),'play'),btn('Leave','ghost',()=>openPlace(place.id),'back'))]);}
   function finish(){closeSheet();stopBlink&&stopBlink();endScreen(g,sess,ctx);}
   view(screen);
   App.cleanup=()=>{timers.forEach(clearTimeout);stopBlink&&stopBlink();cleanups.forEach(f=>{try{f();}catch(e){}});};
@@ -740,38 +1018,47 @@ function openGame(id,level){
   g.init(ctx);
 }
 
-/* ---------- end of a play: describe what the child did ---------- */
+/* ---------- end of a quest: the lantern lights (for taking part, not for winning) ---------- */
 function endScreen(g,sess,ctx){
-  const lines=[];
-  if(sess.tries)lines.push('You tried '+plural(sess.tries,'thing')+'.');
-  if(sess.retries)lines.push('Something surprised you '+plural(sess.retries,'time')+', and you carried on.');
-  if(sess.questions)lines.push('You asked '+plural(sess.questions,'question')+'.');
-  if(sess.changes)lines.push('You changed your plan '+plural(sess.changes,'time')+'.');
-  if(sess.predictions)lines.push('You guessed first '+plural(sess.predictions,'time')+'.');
-  if(sess.explains)lines.push('You gave '+plural(sess.explains,'reason')+'.');
-  if(sess.creates)lines.push('You made '+plural(sess.creates,'puzzle')+' for someone else.');
-  if(!lines.length)lines.push('You had a look around. Next time, try one thing and see what happens.');
+  const id=sess.id,p=placeOf(id),Q=ST.QUEST[id];
+  const bits=[];
+  if(sess.tries)bits.push('tried '+plural(sess.tries,'thing'));
+  if(sess.questions)bits.push('asked '+plural(sess.questions,'question'));
+  if(sess.changes)bits.push('changed your plan '+plural(sess.changes,'time'));
+  if(sess.explains)bits.push('gave '+plural(sess.explains,'reason'));
+  if(sess.creates)bits.push('made '+plural(sess.creates,'puzzle'));
+  const sum=bits.length?'You '+bits.join(', ')+'.':'';
   const entry={game:g.title,when:new Date().toISOString().slice(0,10),sess:Object.assign({},sess)};delete entry.sess.started;
   const J0=store.get('journal',[]);const J=Array.isArray(J0)?J0:[];J.unshift(entry);store.set('journal',J.slice(0,40));
-  const R=store.get('recent',[]);const rr=(Array.isArray(R)?R:[]).filter(x=>x!==sess.id);rr.unshift(sess.id);store.set('recent',rr.slice(0,10));
-  let told=false;const reply=h('p',{class:'note'},'');
-  const mk=t=>chip(t,function(){this.classList.toggle('on');if(!told){told=true;entry.sess.explains++;
-      J[0]=entry;store.set('journal',J.slice(0,40));reply.textContent='Thank you for telling me. Saying how you think makes you stronger.';speak(reply.textContent);}});
-  const next=[btn('Play again','go',()=>ctx.restart(sess.level),'replay')];
-  if(sess.level<g.levels.length)next.push(btn('A bit harder','ghost',()=>{store.set('lvl_'+sess.id,sess.level+1);ctx.restart(sess.level+1);},'up'));
-  if(sess.level>1)next.push(btn('A bit easier','ghost',()=>{store.set('lvl_'+sess.id,sess.level-1);ctx.restart(sess.level-1);},'down'));
-  next.push(btn('Another game','ghost',()=>{App.today=null;home();},'grid'));
+  const R=store.get('recent',[]);const rr=(Array.isArray(R)?R:[]).filter(x=>x!==id);rr.unshift(id);store.set('recent',rr.slice(0,10));
+  /* the next visit adapts quietly: more tries without getting stuck means a step up; a lot of getting stuck means a step down */
+  const lv=sess.level;
+  if(sess.retries<=1&&sess.tries>=3&&lv<g.levels.length)store.set('lvl_'+id,lv+1);
+  else if(sess.retries>=7&&lv>1)store.set('lvl_'+id,lv-1);
+  const L=litAll();const wasPlace=litN(p)===p.games.length;const was=!!L[id];
+  if(sess.started){L[id]=1;store.set('lit',L);}
+  const nowPlace=litN(p)===p.games.length;const allLit=ALL().filter(i=>GAMES[i]).every(i=>L[i]);
+  const told=h('p',{class:'note'},'');
+  const say=Q.win+' '+ST.LINES.lit+' '+ST.LINES.tell;
+  const nextId=p.games.find(x=>GAMES[x]&&!L[x]&&x!==id);
+  const outroDue=nowPlace&&!store.get('out_'+p.id,false);
+  const nextBtn=outroDue?btn('Continue the story','go',()=>playOutro(p.id),'play'):nextId?btn('Next quest','go',()=>openGame(nextId),'play'):btn('Back to the map','go',()=>home(),'home');
+  const tog=store.get('together',false);
+  const refl=tog?h('div',{class:'together'},h('p',null,h('b',null,'Together: '),g.grown.ask),h('p',null,h('b',null,'Praise: '),g.grown.praise)):null;
+  const sp=sparkSVG();
   const screen=h('div',{class:'wrap game','data-hat':g.hat},
-    h('div',{class:'gbar'},h('button',{class:'pill',type:'button','aria-label':'Home',onclick:home},ICON.home()),h('h2',null,'Here is what you did'),h('button',{class:'say light',type:'button','aria-label':'Hear it again',onclick:()=>speak('Here is what you did. '+lines.join(' '))},ICON.speaker()),voiceBtn()),
-    h('div',{class:'stage'},h('div',{class:'area'},
-      h('div',{class:'report'},lines.map(l=>h('p',null,h('span',{class:'dotpic'}),l))),
-      h('p',null,'What did you do? Tap any that fit.'),
-      h('div',{class:'chips'},['I tried different ways','I asked a question','I changed my plan','It was tricky','It was easy'].map(mk)),reply),
-    h('div',{class:'tray'},next)));
-  view(screen);speak('Here is what you did. '+lines.join(' '));
+    h('div',{class:'gbar'},h('button',{class:'pill',type:'button','aria-label':'Back to the island map',onclick:home},ICON.home()),h('h2',null,'You lit a lantern!'),h('button',{class:'say light',type:'button','aria-label':'Hear it again',onclick:()=>speak(say)},ICON.speaker()),voiceBtn()),
+    h('div',{class:'stage'},
+      h('div',{class:'sceneband tall payoff'},ST.scene(p.id),h('span',{class:'sch big hop'},art(ST.CHAR[p.id],150)),h('span',{class:'biglan'},ST.el(ST.lantern(true),'lan on glow'))),
+      h('div',{class:'spark'},sp,h('div',{class:'bubble'},h('div',{class:'bubble-text'},Q.win,h('span',{class:'extra'},ST.LINES.tell)),h('button',{class:'say',type:'button','aria-label':'Hear it again',onclick:()=>speak(say)},ICON.speaker()))),
+      h('div',{class:'area slim'},sum?h('p',{class:'note big'},sum):null,lanterns(p),refl),
+      h('div',{class:'tray'},nextBtn,btn('Play again','ghost',()=>ctx.restart(sess.level),'replay'),(nextId||outroDue)?btn('Back to the map','ghost',()=>home(),'home'):null)));
+  view(screen);setMood(sp,'wow');ST.sfx('lantern');speak(say);
+  const sb=blinkLoop(sp);const prev=App.cleanup;App.cleanup=()=>{sb&&sb();};
 }
 
 /* ---------- grown-ups: journal, notes, settings (behind a press-and-hold) ---------- */
+function togetherBtnAdult(){const on=!!store.get('together',false);return h('button',{class:'btn',type:'button','aria-pressed':String(on),onclick:()=>{store.set('together',!on);grownups();}},ICON.together(),h('span',null,on?'Together prompts are on':'Together prompts are off'));}
 function grownups(){
   const J0=store.get('journal',[]);const J=(Array.isArray(J0)?J0:[]).filter(e=>e&&typeof e==='object'&&e.sess&&typeof e.sess==='object');
   const q=J.reduce((a,e)=>a+(+e.sess.questions||0),0);
@@ -784,9 +1071,11 @@ function grownups(){
     h('div',{class:'gbar'},h('button',{class:'pill',type:'button','aria-label':'Home',onclick:home},ICON.home()),h('h1',null,'For grown-ups')),
     h('div',{class:'cols'},
       h('section',{class:'panel'},h('h2',null,'Settings'),
-        h('p',null,'Spark reads everything aloud. Turn the voice off here if you prefer a quiet screen.'),vbtn,
+        h('p',null,'Spark reads everything aloud and the island has little sounds. Turn the voice and sounds off here if you prefer a quiet screen.'),vbtn,
+        h('h3',null,'Playing together'),h('p',null,'The two-people button on the island map shows you a question to ask and a thing to praise on every quest. Your child can play alone or with you; the games work both ways.'),togetherBtnAdult(),
+        h('h3',null,'Lanterns'),h('p',{class:'note'},'Lanterns light for taking part, not for winning, so there is nothing to lose. Lit: '+Object.keys(litAll()).length+' of '+ALL().length+'.'),btn('Put the lanterns out','ghost',()=>{store.set('lit',{});grownups();},'cross'),
         h('h3',null,'Challenge level for each game'),
-        h('p',{class:'note'},'Each game starts at the level shown. Your child can also choose "A bit harder" or "A bit easier" at the end of a play.'),lvRows),
+        h('p',{class:'note'},'Each game starts at the level shown and adjusts itself after each play: a few tries without getting stuck moves it up, and a lot of getting stuck moves it down. You can set it here.'),lvRows),
       h('section',{class:'panel'},h('h2',null,'Thinking journal'),
         h('p',{class:'lead'},J.length?'Questions asked so far in this browser: '+q+'. These are only for talking about. There is nothing to beat.':'Nothing here yet. Play a game and come back.'),
         h('div',{class:'hgrid'},J.slice(0,15).map(e=>h('div',{class:'entry'},h('b',null,String(e.game||'')),' ',h('small',null,String(e.when||'')),h('div',{class:'note'},bits(e.sess)||'Had a look')))),
@@ -802,7 +1091,7 @@ function grownups(){
           h('li',null,'Spark names what the child did: a try, a changed plan, a question, a reason. Praise for process rather than outcome is linked with children later seeing ability as something that grows. The evidence is mostly observational.'),
           h('li',null,'Hints are questions. The child asks Spark, and Spark answers only what was asked. Asking is the skill being practised.'),
           h('li',null,'A miss is information. Games say what the miss tells us and let the child try again straight away.'),
-          h('li',null,'Spark picks a game each time, and the child can switch to any other. Nothing is unlocked by winning.')),
+          h('li',null,'The games sit on Spark Island. Spark suggests a place, and the child can go anywhere. Nothing is locked, and lanterns are a thank-you for taking part.')),
         h('h3',null,'How to join in'),
         h('ul',null,
           h('li',null,'Sit beside the child at first. Ask "What did you try?" and "What will you change?" more than "Is it right?".'),
@@ -814,7 +1103,7 @@ function grownups(){
 
 /* shared exports for the game files */
 Object.assign(window.LP={},{h,svg,rnd,pick,shuffle,btn,chip,shapeSVG,beadSVG,tex,COLORS,CNAME,GAMES,plural,home,openGame,speak,sparkSVG,art,ICON,SP,reduced});
-window.LP.boot=()=>{document.body.insertAdjacentHTML('afterbegin',TEXDEFS);home();};
+window.LP.boot=()=>{document.body.insertAdjacentHTML('afterbegin',TEXDEFS);document.addEventListener('pointerdown',e=>{if(e.target.closest&&e.target.closest('button,[role=button]'))ST.sfx('tap');},true);if(!store.get('prologue',false))playPrologue();else home();};
 })();
 </script>
 <script>
@@ -1147,7 +1436,7 @@ GAMES.hanoi={title:'Tower of Hanoi',hat:'eng',tile:'t_hanoi',blurb:'Move the who
   const label=s=>s===1?'The smallest':s===n?'The biggest':n===3?'The middle one':s===2?'The second smallest':'The second biggest';
   function render(){
     c.area.replaceChildren();
-    if(predicted==null&&!firstMoved)c.area.append(h('p',{class:'ask'},'Guess first: which disc will move first?'),
+    if(false)c.area.append(h('p',{class:'ask'},'Guess first: which disc will move first?'),
       h('div',{class:'chips'},Array.from({length:n},(_,i)=>i+1).map(s=>chip(label(s),()=>{predicted=s;c.fx('predict','Let us see!');render();}))));
     c.area.append(h('div',{class:'pegs'},pegs.map((p,pi)=>h('div',{class:'peg'+(sel===pi?' sel':''),role:'button',tabindex:'0','aria-label':'Peg '+(pi+1)+(pi===2?', the flag peg':'')+(p.length?', top disc size '+p[p.length-1]:', empty'),
       onclick:()=>tap(pi),onkeydown:e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tap(pi);}}},
@@ -1185,7 +1474,7 @@ GAMES.river={title:'River Crossing',hat:'eng',tile:'t_river',blurb:'Row everyone
   function trouble(side){const g=st[side];if(g.has(0)&&g.has(1))return 'the '+A.n+' would eat the '+B.n;if(g.has(1)&&g.has(2))return 'the '+B.n+' would eat the '+C.n;return null;}
   function render(){
     c.area.replaceChildren();
-    if(predicted==null&&!crossings)c.area.append(h('p',{class:'ask'},'Guess first: who should cross first?'),h('div',{class:'chips'},names.map((x,i)=>chip(x.n,()=>{predicted=i;c.fx('predict','Let us try it!');render();},{pic:x.pic}))));
+    if(false)c.area.append(h('p',{class:'ask'},'Guess first: who should cross first?'),h('div',{class:'chips'},names.map((x,i)=>chip(x.n,()=>{predicted=i;c.fx('predict','Let us try it!');render();},{pic:x.pic}))));
     const bank=(side)=>h('div',{class:'bank'},[...st[side]].sort().map(i=>h('button',{class:'who-btn'+(st.load===i?' on':''),type:'button','aria-label':names[i].n+(st.load===i?', in the boat':''),disabled:won||blocked||st.boat!==side,onclick:()=>{st.load=st.load===i?null:i;render();}},art(names[i].pic,56))));
     c.area.append(h('div',{class:'river'},bank('L'),
       h('div',{class:'water'},h('div',{class:'boatgroup '+(st.boat==='L'?'atL':'atR'),role:'img','aria-label':'The farmer and the boat are on the '+(st.boat==='L'?'left':'right')+' bank'+(st.load!=null?', with the '+names[st.load].n:'')},
@@ -1293,7 +1582,7 @@ GAMES.paths={title:'Right-and-Up Paths',hat:'eng',tile:'t_paths',blurb:'Find eve
       g.addEventListener('click',()=>tap(x,y));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tap(x,y);}});
       sv.append(g);}
     c.area.replaceChildren();
-    if(predicted==null)c.area.append(h('p',{class:'ask'},'Guess first: how many different paths are there?'),h('div',{class:'chips'},[...new Set([3,total-3,total,total+4].filter(n=>n>1))].sort((a,b)=>a-b).map(n=>chip(String(n),()=>{predicted=n;c.fx('predict','Nobody has told you. Let us find out!');render();},{hear:false}))));
+    if(false)c.area.append(h('p',{class:'ask'},'Guess first: how many different paths are there?'),h('div',{class:'chips'},[...new Set([3,total-3,total,total+4].filter(n=>n>1))].sort((a,b)=>a-b).map(n=>chip(String(n),()=>{predicted=n;c.fx('predict','Nobody has told you. Let us find out!');render();},{hear:false}))));
     c.area.append(h('p',{class:'ask'},'Start at the bottom left. Tap dots to go right or up until you reach the flag.'),h('div',{class:'center'},sv),
       over?null:h('div',{class:'row'},btn('Start this path again','ghost',()=>{path=[[0,0]];render();},'replay'),btn('I think we found them all','go',all_,'tick')),
       msg?h('p',{class:'note'},msg):null,
