@@ -763,9 +763,10 @@ function sentences(text){const t=String(text).replace(EMOJI,'').replace(/\s+/g,'
 const keyOf=s=>s.toLowerCase().replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/\s+/g,' ').trim();
 const clips=new Map();let packP=null,actx=null,curSrc=null,tok=0;
 function loadPack(){if(packP)return packP;
-  packP=fetch('audio/voice.bin').then(r=>r.ok?r.arrayBuffer():null).then(buf=>{if(!buf)return;
+  const one=url=>fetch(url).then(r=>r.ok?r.arrayBuffer():null).then(buf=>{if(!buf)return;
     const n=new DataView(buf).getUint32(0,true);const head=JSON.parse(new TextDecoder().decode(new Uint8Array(buf,4,n)));
-    for(const k in head.clips){const c=head.clips[k];clips.set(k,{buf,at:4+n+c[0],len:c[1]});}}).catch(()=>{});return packP;}
+    for(const k in head.clips){const c=head.clips[k];clips.set(k,{buf,at:4+n+c[0],len:c[1]});}}).catch(()=>{});
+  packP=Promise.all([one('audio/voice.bin'),one('audio/voice2.bin')]);return packP;}
 function browserSpeak(t){try{const s=window.speechSynthesis;if(!s)return;s.cancel();
   const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.9;u.pitch=1.15;s.speak(u);}catch(e){}}
 async function speak(t){if(!App.voice)return;const my=++tok;stopAudio();const ss=sentences(t);if(!ss.length)return;
